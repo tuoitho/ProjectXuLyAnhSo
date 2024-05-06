@@ -1,1 +1,1 @@
-ghi chú: hướng nội nên không được share nha
+ghi chú: hướng nội nên không được share
