@@ -33,8 +33,8 @@ def add_bg_from_local(image_file):
     )
 add_bg_from_local(r'Background\MNIST.jpg')  
 
-model_architecture = r'ModelMNIST\digit_config.json'
-model_weights = r"ModelMNIST\digit_weight.h5"
+model_architecture = r"pages\ModelMNIST\digit_config.json"
+model_weights = r"pages\ModelMNIST\digit_weight.h5"
 model = model_from_json(open(model_architecture).read())
 model.load_weights(model_weights) 
 
@@ -61,8 +61,8 @@ def create_random_image():
         m = i // 15
         n = i % 15
         digit_random[m*28:(m+1)*28, n*28:(n+1)*28] = X_test_image[st.session_state.index[i]] 
-    cv2.imwrite(r'ModelMNIST\digit_random.jpg', digit_random)
-    return r'ModelMNIST\digit_random.jpg'
+    cv2.imwrite(r'pages\ModelMNIST\digit_random.jpg', digit_random)
+    return r'pages\ModelMNIST\digit_random.jpg'
 
 
 #@st.cache
@@ -84,7 +84,7 @@ def recognize_digits(index, image):
 
 def main():
 	
-    st.write(f"<span style='color:white; font-size:50px;font-weight:bold;'>Nhận dạng chữ số viết tay MNIST</span>", unsafe_allow_html=True)
+    st.write(f"<span style='color:white; font-size:40px;font-weight:bold;'>Nhận dạng chữ số viết tay MNIST</span>", unsafe_allow_html=True)
 
     if 'index' not in st.session_state:
         st.session_state.index = None
