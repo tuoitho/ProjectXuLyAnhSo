@@ -28,7 +28,7 @@ def add_bg_from_local(image_file):
     )
 
 
-add_bg_from_local('Background/Home.jpg')
+add_bg_from_local('images/Home.jpg')
 st.markdown("""
 <style>
     [data-testid=stSidebar] {
