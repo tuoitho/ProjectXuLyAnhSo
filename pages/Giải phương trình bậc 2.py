@@ -25,7 +25,7 @@ def add_bg_from_local(image_file):
     """,
     unsafe_allow_html=True
     )
-add_bg_from_local('Background/Quadratic Equation Solver.png')  
+add_bg_from_local('images/Quadratic Equation Solver.png')  
 st.write(f"<span style='color:purple; font-size:50px;font-weight:bold;'>Giải phương trình bậc 2</span>", unsafe_allow_html=True)
 st.sidebar.header("Giải phương trình bậc 2")
 

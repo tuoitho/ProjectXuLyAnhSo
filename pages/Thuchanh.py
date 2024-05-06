@@ -34,7 +34,7 @@ def add_bg_from_local(image_file):
     """,
     unsafe_allow_html=True
     )
-add_bg_from_local('Background/bgxla.webp')  
+add_bg_from_local('images/bgxla.webp')  
 
 def main():
     st.markdown('<style>h4 { margin-bottom: 5px; }</style>', unsafe_allow_html=True)
@@ -85,8 +85,8 @@ def chuong3():
             st.markdown('<h4 style="color: black;">Input Image</h4>', unsafe_allow_html=True)
             st.image(st.session_state.imgin, use_column_width=True)
         with col_mid:
-            st.image("Background/muiten.gif",use_column_width=True)
-            st.image("Background/muiten.gif",use_column_width=True)
+            st.image("images/muiten.gif",use_column_width=True)
+            st.image("images/muiten.gif",use_column_width=True)
 
         with col2:
             st.markdown('<h4 style="color: black;">Output Image</h4>', unsafe_allow_html=True)
@@ -196,8 +196,8 @@ def chuong4():
             st.markdown('<h4 style="color: black;">Input Image</h4>', unsafe_allow_html=True)
             st.image(st.session_state.imgin, use_column_width=True)
         with col_mid:
-            st.image("Background/muiten.gif",use_column_width=True)
-            st.image("Background/muiten.gif",use_column_width=True)
+            st.image("images/muiten.gif",use_column_width=True)
+            st.image("images/muiten.gif",use_column_width=True)
         with col2:
             st.markdown('<h4 style="color: black;">Output Image</h4>', unsafe_allow_html=True)
             
@@ -237,8 +237,8 @@ def chuong5():
             st.markdown('<h4 style="color: black;">Input Image</h4>', unsafe_allow_html=True)
             st.image(st.session_state.imgin, use_column_width=True)
         with col_mid:
-            st.image("Background/muiten.gif",use_column_width=True)
-            st.image("Background/muiten.gif",use_column_width=True)
+            st.image("images/muiten.gif",use_column_width=True)
+            st.image("images/muiten.gif",use_column_width=True)
         with col2:
             st.markdown('<h4 style="color: black;">Output Image</h4>', unsafe_allow_html=True)
         buttons_layout = st.columns(3)
@@ -278,8 +278,8 @@ def chuong9():
             st.markdown('<h4 style="color: black;">Input Image</h4>', unsafe_allow_html=True)
             st.image(st.session_state.imgin, use_column_width=True)
         with col_mid:
-            st.image("Background/muiten.gif",use_column_width=True)
-            st.image("Background/muiten.gif",use_column_width=True)
+            st.image("images/muiten.gif",use_column_width=True)
+            st.image("images/muiten.gif",use_column_width=True)
         with col2:
             st.markdown('<h4 style="color: black;">Output Image</h4>', unsafe_allow_html=True)
         st.markdown('<h4 style="color: black;">Button</h4>', unsafe_allow_html=True)

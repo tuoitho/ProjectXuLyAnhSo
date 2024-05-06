@@ -31,7 +31,7 @@ def add_bg_from_local(image_file):
     """,
     unsafe_allow_html=True
     )
-add_bg_from_local(r"Background\nhandangface.jpg")  
+add_bg_from_local(r"images\nhandangface.jpg")  
 
 st.write(f"<span style='color:white; font-size:50px;'>Nhận dạng khuôn mặt</span>", unsafe_allow_html=True)
 

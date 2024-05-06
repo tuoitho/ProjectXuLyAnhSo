@@ -33,7 +33,7 @@ def add_bg_from_local(image_file):
     """,
     unsafe_allow_html=True
     )
-# add_bg_from_local('Background/PhatHienKhuonMat.png')  
+# add_bg_from_local('images/PhatHienKhuonMat.png')  
 
 if 'stop' not in st.session_state:
     st.session_state.stop = False

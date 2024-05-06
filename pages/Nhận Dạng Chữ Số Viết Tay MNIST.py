@@ -35,7 +35,7 @@ def add_bg_from_local(image_file):
     )
 
 
-add_bg_from_local(r'Background\MNIST.jpg')
+add_bg_from_local(r'images\MNIST.jpg')
 
 model_architecture = r"pages\ModelMNIST\digit_config.json"
 model_weights = r"pages\ModelMNIST\digit_weight.h5"
