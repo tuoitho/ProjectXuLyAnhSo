@@ -30,8 +30,6 @@ Bước 3:
 Follow me to see more fun projects!
 
 Ảnh chụp màn hình:
-![image](https://github.com/tuoitho/Do-An-AI/assets/135036590/6ac0b073-92fb-478f-87cb-c2ee9607a1ae)Instructions:
-
 The web application has been deployed here: [link](https://ttt-game.streamlit.app/)
 
 It will take some time to wake it up, if it is sleeping.
@@ -90,4 +88,4 @@ Bước 3:
 Follow me to see more fun projects!
 
 Ảnh chụp màn hình:
-![image](https://github.com/tuoitho/Do-An-AI/assets/135036590/6ac0b073-92fb-478f-87cb-c2ee9607a1ae)
+
