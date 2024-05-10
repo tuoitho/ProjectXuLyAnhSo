@@ -3,7 +3,7 @@
 
 HDSD:
 
-Ứng dụng web đã được deploy tại đây: [link](https://ttt-game.streamlit.app/){:target="_blank"}
+Ứng dụng web đã được deploy tại đây: [link](https://tuoithodakhoc.streamlit.app/){:target="_blank"}
 
 Sẽ cần 1 khoảng thời gian để đánh thức nó, nếu nó đã ngủ.
 
@@ -19,7 +19,7 @@ trong terminal chạy lệnh sau:
 
 streamlit run <tên file>
 
-ví dụ: streamlit run tictactoe_gui_web.py
+ví dụ: streamlit run t.py
 
 Bạn có thể mở visual studio code, mở thư mục chứa source code, sau đó mở terminal bằng phím tắt Ctrl+Shift+`, sau đó gõ streamlit run tictactoe_gui_web.py
 
