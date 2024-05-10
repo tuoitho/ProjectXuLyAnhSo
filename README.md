@@ -1,5 +1,4 @@
 
-![image](https://github.com/tuoitho/Do-An-AI/assets/135036590/6ac0b073-92fb-478f-87cb-c2ee9607a1ae)
 
 HDSD:
 
