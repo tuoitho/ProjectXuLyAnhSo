@@ -2,7 +2,7 @@
 
 HDSD:
 
-Ứng dụng web đã được deploy tại đây: [link](https://tuoithodakhoc.streamlit.app/){:target="_blank"}
+Ứng dụng web đã được deploy tại đây: [link](ttt-game.streamlit.app){:target="_blank"}
 
 Sẽ cần 1 khoảng thời gian để đánh thức nó, nếu nó đã ngủ.
 
