@@ -3,7 +3,7 @@ import base64
 import cv2 as cv
 import numpy as np
 import streamlit as st
-
+st.balloons()
 st.write(f"<span style='color:white; font-size:50px;'>Phát hiện khuôn mặt</span>", unsafe_allow_html=True)
 
 st.sidebar.header("Phát hiện khuôn mặt")

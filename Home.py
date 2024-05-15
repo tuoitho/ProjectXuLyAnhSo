@@ -11,7 +11,6 @@ st.write("<h1 style='font-size: 50px;color:purple'>Welcome to the website of our
          unsafe_allow_html=True)
 st.sidebar.success("You can choose one of my projects above.")
 
-
 def add_bg_from_local(image_file):
     with open(image_file, "rb") as image_file:
         encoded_string = base64.b64encode(image_file.read())
@@ -47,6 +46,9 @@ st.markdown(
     """,
     unsafe_allow_html=True
 )
+st.balloons()
+st.balloons()
+st.balloons()
 
 st.markdown(
     """

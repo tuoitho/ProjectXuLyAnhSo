@@ -3,7 +3,7 @@ import streamlit as st
 from cvzone.HandTrackingModule import HandDetector
 import cv2 as cv
 st.subheader('Nhận dạng ban tay')
-
+st.balloons()
 def add_bg_from_local(image_file):
     with open(image_file, "rb") as image_file:
         encoded_string = base64.b64encode(image_file.read())

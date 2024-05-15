@@ -8,7 +8,7 @@ from PIL import Image
 from tensorflow import keras
 from tensorflow.keras.models import model_from_json  # type: ignore
 from tensorflow.keras.optimizers import SGD  # type: ignore
-
+st.balloons()
 st.markdown("""
 <style>
     [data-testid=stSidebar] {

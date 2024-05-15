@@ -3,7 +3,7 @@ import cv2
 import imutils
 import numpy as np
 import base64
-
+st.balloons()
 def process_image(image):
     # Convert the image to grayscale
     gray = cv2.cvtColor(image, cv2.COLOR_BGR2GRAY)

@@ -2,7 +2,7 @@ import base64
 import numpy as np 
 import cv2 
 import streamlit as st
-
+st.balloons()
 # Tạo tiêu đề cho ứng dụng
 st.title("Tìm toạ độ đường viền")
 def add_bg_from_local(image_file):

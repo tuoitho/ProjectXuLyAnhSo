@@ -2,7 +2,7 @@ import base64
 import cv2
 import numpy as np
 import streamlit as st
-
+st.balloons()
 # Tạo tiêu đề cho ứng dụng
 st.title("Nhận dạng cạnh")
 def add_bg_from_local(image_file):
