@@ -1,153 +1,137 @@
 import streamlit as st
 import numpy as np
+from PIL import Image
 import cv2
-
-import sys
-import os
-import tensorflow as tf
-sys.path.append('pages')
-from object_detection.utils import config_util
-from object_detection.utils import label_map_util
-from object_detection.utils import visualization_utils as viz_utils
-from object_detection.builders import model_builder
 import base64
-
-st.markdown("""
-<style>
-    [data-testid=stSidebar] {
-        background-color: #748A88;
-    }
-</style>
-""", unsafe_allow_html=True)
 
 def add_bg_from_local(image_file):
     with open(image_file, "rb") as image_file:
         encoded_string = base64.b64encode(image_file.read())
 
     st.markdown(
-    f"""
-    <style>
-    .stApp {{
-        background-image: url(data:image/{"png"};base64,{encoded_string.decode()});
-        background-size: cover
-    }}
-    </style>
-    """,
-    unsafe_allow_html=True
+        f"""
+        <style>
+        .stApp {{
+            background-image: url(data:image/{"png"};base64,{encoded_string.decode()});
+            background-size: cover;
+        }}
+        .title-text {{
+            font-size: 24px;
+            color: white;
+        }}
+        </style>
+        """,
+        unsafe_allow_html=True
     )
 
-add_bg_from_local('Background/NhanDangTraiCay.jpg')  
+st.markdown("""
+<style>
+    [data-testid=stSidebar] {
+        background-color: #efffc9;
+    }
+</style>
+""", unsafe_allow_html=True)
 
-st.sidebar.header("Nhận dạng trái cây")
+# Add background image
+add_bg_from_local(r'images\NhanDangTraiCay.jpg')  
 
-if 'load_model' not in st.session_state:
-    st.session_state.load_model = True
-    st.session_state.configs = config_util.get_configs_from_pipeline_file('ModelNhanDangTraiCay/pipeline.config')
-    st.session_state.detection_model = model_builder.build(model_config=st.session_state.configs['model'], is_training=False)
+st.markdown("<h1 class='title-text'>Nhận dạng trái cây</h1>", unsafe_allow_html=True)
 
-    # Restore checkpoint
-    st.session_state.ckpt = tf.compat.v2.train.Checkpoint(model=st.session_state.detection_model)
-    st.session_state.ckpt.restore(os.path.join('ModelNhanDangTraiCay/ckpt-8')).expect_partial()
-    
-    st.session_state.category_index = label_map_util.create_category_index_from_labelmap('ModelNhanDangTraiCay/label_map.pbtxt')
+try:
+    if st.session_state["LoadModel"] == True:
+        print('Đã load model rồi')
+except:
+    st.session_state["LoadModel"] = True
+    st.session_state["Net"] = cv2.dnn.readNet(r"pages\modeltraicay\trai_cay.onnx")
+    print(st.session_state["LoadModel"])
+    print('Load model lần đầu') 
 
-config = tf.compat.v1.ConfigProto(gpu_options = tf.compat.v1.GPUOptions(per_process_gpu_memory_fraction=0.8))
-config.gpu_options.allow_growth = True
-session = tf.compat.v1.Session(config=config)
-tf.compat.v1.keras.backend.set_session(session)
+# Constants.
+INPUT_WIDTH = 640
+INPUT_HEIGHT = 640
+SCORE_THRESHOLD = 0.5
+NMS_THRESHOLD = 0.45
+CONFIDENCE_THRESHOLD = 0.45
 
-@tf.function
-def detect_fn(image):
-    image, shapes = st.session_state.detection_model.preprocess(image)
-    prediction_dict = st.session_state.detection_model.predict(image, shapes)
-    detections = st.session_state.detection_model.postprocess(prediction_dict, shapes)
-    return detections
+# Text parameters.
+FONT_FACE = cv2.FONT_HERSHEY_SIMPLEX
+FONT_SCALE = 0.7
+THICKNESS = 1
 
-def XoaTrung(a, L):
-    index = []
-    flag = np.zeros(L, np.bool_)
-    for i in range(0, L):
-        if flag[i] == False:
-            flag[i] = True
-            x1 = (a[i,0] + a[i,2])/2
-            y1 = (a[i,1] + a[i,3])/2
-            for j in range(i+1, L):
-                x2 = (a[j,0] + a[j,2])/2
-                y2 = (a[j,1] + a[j,3])/2
-                d = np.sqrt((x2-x1)**2 + (y2-y1)**2)
-                if d < 0.2:
-                    flag[j] = True
-            index.append(i)
-    for i in range(0, L):
-        if i not in index:
-            flag[i] = False
-    return flag
+# Colors.
+BLACK = (0, 0, 0)
+BLUE = (255, 178, 50)
+YELLOW = (0, 255, 255)
 
-st.subheader('Nhận dạng trái cây')
+def draw_label(im, label, x, y):
+    """Draw text onto image at location."""
+    text_size = cv2.getTextSize(label, FONT_FACE, FONT_SCALE, THICKNESS)
+    dim, baseline = text_size[0], text_size[1]
+    cv2.rectangle(im, (x, y), (x + dim[0], y + dim[1] + baseline), BLACK, cv2.FILLED)
+    cv2.putText(im, label, (x, y + dim[1]), FONT_FACE, FONT_SCALE, YELLOW, THICKNESS, cv2.LINE_AA)
 
-# with open("test.zip", "rb") as fp:
-#     btn = st.download_button(
-#         label="Download ZIP",
-#         data=fp,
-#         file_name="ModelNhanDangTraiCay/test.zip",
-#         mime="application/zip"
-#     )
+def pre_process(input_image, net):
+    blob = cv2.dnn.blobFromImage(input_image, 1/255, (INPUT_WIDTH, INPUT_HEIGHT), [0, 0, 0], 1, crop=False)
+    net.setInput(blob)
+    outputs = net.forward(net.getUnconnectedOutLayersNames())
+    return outputs
 
-FRAME_WINDOW = st.image([])
+def post_process(input_image, outputs):
+    class_ids = []
+    confidences = []
+    boxes = []
+    rows = outputs[0].shape[1]
+    image_height, image_width = input_image.shape[:2]
+    x_factor = image_width / INPUT_WIDTH
+    y_factor = image_height / INPUT_HEIGHT
 
-image = cv2.imread('../NoImage.bmp', cv2.IMREAD_COLOR)
-FRAME_WINDOW.image(image, channels='BGR')
+    for r in range(rows):
+        row = outputs[0][0][r]
+        confidence = row[4]
+        if confidence >= CONFIDENCE_THRESHOLD:
+            classes_scores = row[5:]
+            class_id = np.argmax(classes_scores)
+            if classes_scores[class_id] > SCORE_THRESHOLD:
+                confidences.append(confidence)
+                class_ids.append(class_id)
+                cx, cy, w, h = row[0], row[1], row[2], row[3]
+                left = int((cx - w/2) * x_factor)
+                top = int((cy - h/2) * y_factor)
+                width = int(w * x_factor)
+                height = int(h * y_factor)
+                box = np.array([left, top, width, height])
+                boxes.append(box)
 
-uploaded_file = st.file_uploader("Choose a image file", type="bmp")
+    indices = cv2.dnn.NMSBoxes(boxes, confidences, CONFIDENCE_THRESHOLD, NMS_THRESHOLD)
+    for i in indices:
+        box = boxes[i]
+        left = box[0]
+        top = box[1]
+        width = box[2]
+        height = box[3]
+        cv2.rectangle(input_image, (left, top), (left + width, top + height), BLUE, 3*THICKNESS)
+        label = "{}:{:.2f}".format(classes[class_ids[i]], confidences[i])
+        draw_label(input_image, label, left, top)
+    return input_image
 
-if uploaded_file is not None:
-    # Convert the file to an opencv image.
-    file_bytes = np.asarray(bytearray(uploaded_file.read()), dtype=np.uint8)
-    opencv_image = cv2.imdecode(file_bytes, 1)
+img_file_buffer = st.file_uploader("Upload an image", type=["bmp", "png", "jpg", "jpeg"])
+col1,colmid,col2 = st.columns(3)
+if img_file_buffer is not None:
+    image = Image.open(img_file_buffer)
+    frame = np.array(image)
+    frame = frame[:, :, [2, 1, 0]]  # RGB -> BGR for OpenCV
+    with  col1:
+        st.image(image, caption='Uploaded Image', use_column_width=True)  # Display the uploaded image larger
+    if st.button('Predict'):
+        with colmid:
+            st.image(r"images\muitendo.png", channels="BGR")
+        classes = ['Buoi', 'Cam', 'Coc', 'Khe', 'Mit']
+        detections = pre_process(frame, st.session_state["Net"])
+        img = post_process(frame.copy(), detections)
+        t, _ = st.session_state["Net"].getPerfProfile()
+        label = 'Inference time: %.2f ms' % (t * 1000.0 / cv2.getTickFrequency())
+        # print(label)
+        cv2.putText(img, label, (20, 40), FONT_FACE, FONT_SCALE, (0, 0, 255), THICKNESS, cv2.LINE_AA)
+        with col2:
+            st.image(img, caption='Detected Image', use_column_width=True)  # Display the result image larger
 
-    # Now do something with the image! For example, let's display it:
-    FRAME_WINDOW.image(opencv_image, channels='BGR')
-    press = st.button('Nhận dạng')
-    if press:
-        image_ket_qua = opencv_image.copy()
-        image_np = np.array(image_ket_qua)
-        input_tensor = tf.convert_to_tensor(np.expand_dims(image_np, 0), dtype=tf.float32)
-        detections = detect_fn(input_tensor)
-
-        num_detections = int(detections.pop('num_detections'))
-        detections = {key: value[0, :num_detections].numpy()
-                    for key, value in detections.items()}
-        detections['num_detections'] = num_detections
-
-        # detection_classes should be ints.
-        detections['detection_classes'] = detections['detection_classes'].astype(np.int64)
-
-        label_id_offset = 1
-        image_np_with_detections = image_np.copy()
-
-        my_box = detections['detection_boxes']
-        my_class = detections['detection_classes']+label_id_offset
-        my_score = detections['detection_scores']
-
-        my_score = my_score[my_score >= 0.7]
-        L = len(my_score)
-        my_box = my_box[0:L]
-        my_class = my_class[0:L]
-
-        flagTrung = XoaTrung(my_box, L)
-        my_box = my_box[flagTrung]
-        my_class = my_class[flagTrung]
-        my_score = my_score[flagTrung]
-
-        viz_utils.visualize_boxes_and_labels_on_image_array(
-                image_np_with_detections,
-                my_box,
-                my_class,
-                my_score,
-                st.session_state.category_index,
-                use_normalized_coordinates=True,
-                max_boxes_to_draw=5,
-                min_score_thresh=.7,
-                agnostic_mode=False)
-
-        FRAME_WINDOW.image(image_np_with_detections, channels='BGR')

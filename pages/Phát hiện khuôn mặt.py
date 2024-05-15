@@ -4,9 +4,8 @@ import cv2 as cv
 import numpy as np
 import streamlit as st
 
-st.set_page_config(page_title="Phát hiện khuôn mặt", page_icon="📊")
+st.write(f"<span style='color:white; font-size:50px;'>Phát hiện khuôn mặt</span>", unsafe_allow_html=True)
 
-st.subheader("Phát hiện khuôn mặt")
 st.sidebar.header("Phát hiện khuôn mặt")
 FRAME_WINDOW = st.image([])
 deviceId = 0
