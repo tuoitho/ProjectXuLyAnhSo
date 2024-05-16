@@ -5,8 +5,7 @@ import os
 import numpy as np
 import base64
 sys.path.append('pages/XuLyAnh')
-st.balloons()
-st.balloons()
+
 import Chuong3 as c3 # type: ignore
 import Chuong4 as c4 # type: ignore
 import Chuong5 as c5 # type: ignore

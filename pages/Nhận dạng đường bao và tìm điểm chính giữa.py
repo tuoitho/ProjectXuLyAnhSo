@@ -4,6 +4,7 @@ import imutils
 import numpy as np
 import base64
 st.balloons()
+
 def process_image(image):
     # Convert the image to grayscale
     gray = cv2.cvtColor(image, cv2.COLOR_BGR2GRAY)
@@ -52,7 +53,7 @@ def add_bg_from_local(image_file):
     )
 
 def main():
-    st.set_page_config(page_title="Tìm đường bao và điểm chính giữa shape", page_icon="📌")
+
     st.write(f"<span style='color:purple; font-size:50px;font-weight:bold;'>Tìm đường bao và điểm chính giữa shape</span>", unsafe_allow_html=True)
 
     st.markdown("""
