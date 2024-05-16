@@ -3,7 +3,7 @@ import base64
 import streamlit as st
 
 st.set_page_config(
-    page_title="Hello",
+    page_title="Final Project",
     page_icon="👋",
 )
 
