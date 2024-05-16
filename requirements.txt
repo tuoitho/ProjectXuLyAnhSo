@@ -3,3 +3,6 @@ streamlit
 opencv-python-headless
 tensorflow
 cvzone
+opencv
+numpy
+mediapipe
