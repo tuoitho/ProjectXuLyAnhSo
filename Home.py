@@ -66,8 +66,8 @@ st.markdown(
         </div>
         <div>
         <h3>Student 2:</h3>
-        - Full name: Le Dinh Tri</p>
-        - Student code: 22110442</p>
+        - Full name: Vu Bao Long </p>
+        - Student code: 22110368</p>
         - School name: HCMC University of Technology and Education
         </div>
         <p><b style="font-size: 40px;">Contact:</b></p>
@@ -80,10 +80,10 @@ st.markdown(
         </div>
         <div>
         <p><b style="font-size: 20px;">Student 2:</b></p>
-        <p>- Github: <a style="color:green" href="https://github.com/tuoitho/">https://github.com/tuoitho/</a></p>
-        <p>- Facebook:<a style="color:green" href="https://web.facebook.com/tuoithodakhoc/"> https://web.facebook.com/tuoithodakhoc/</a></p>
-        <p>- Email: <a style="color:green" href="tuoithokhoc1414@gmail.com"> tuoithokhoc1414@gmail.com</a></p>
-        <p>- Phone: <a style="color:green" href="">0362092749</a></p>
+        <p>- Github: <a style="color:green" href="https://github.com/vubaolongkg/">https://github.com/vubaolongkg/</a></p>
+        <p>- Facebook:<a style="color:green" href="https://www.facebook.com/profile.php?id=100010121539430/"> https://www.facebook.com/profile.php?id=100010121539430/</a></p>
+        <p>- Email: <a style="color:green" href="vubaolong1484@gmail.com"> vubaolong1484@gmail.com</a></p>
+        <p>- Phone: <a style="color:green" href="">0986585203</a></p>
         </div>
         <div>
         <h1>Teacher: Tran Tien Duc</h1>
