@@ -41,7 +41,9 @@ st.markdown(
     <style>
     .red-text {
         color: red;
+        font-weight: bold;
     }
+
     </style>
     """,
     unsafe_allow_html=True
@@ -60,15 +62,15 @@ st.markdown(
         <p><b style="font-size: 40px;">Group Members:</b></p>
         <div>
         <h3>Student 1:</h3>
-        - Full name: Le Dinh Tri</p>
-        - Student code: 22110442</p>
-        - School name: HCMC University of Technology and Education
+        <h4>- Full name: Lê Đình Trí</h4>
+        <h4>- Student code: 22110442</h4>
+        <h4>- School name: HCMC University of Technology and Education</h4>
         </div>
         <div>
         <h3>Student 2:</h3>
-        - Full name: Vu Bao Long </p>
-        - Student code: 22110368</p>
-        - School name: HCMC University of Technology and Education
+        <h4>- Full name: Vũ Bảo Long</h4>
+        <h4>- Student code: 22110368</h4>
+        <h4>- School name: HCMC University of Technology and Education</h4>
         </div>
         <p><b style="font-size: 40px;">Contact:</b></p>
         <div>
