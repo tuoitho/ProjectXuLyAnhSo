@@ -55,7 +55,13 @@ def add_bg_from_local(image_file):
 def main():
 
     st.write(f"<span style='color:purple; font-size:50px;font-weight:bold;'>Tìm đường bao và điểm chính giữa shape</span>", unsafe_allow_html=True)
-
+    with open("images/testduongbao.rar", "rb") as fp:
+            btn = st.download_button(
+                label="Download ảnh để test",
+                data=fp,
+                file_name="testduongbao.rar",
+                mime="application/zip"
+        )
     st.markdown("""
     <style>
         [data-testid=stSidebar] {{

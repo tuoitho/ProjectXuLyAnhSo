@@ -150,3 +150,5 @@ if image_file is not None:
 		outs = st.session_state["Net"].forward(outNames)
 		img = postprocess(frame, outs)
 		st.image(img, caption=None, channels="BGR")
+
+    
