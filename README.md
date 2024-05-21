@@ -21,7 +21,7 @@ The web application has been deployed here: [Web App Link](https://tuoithodakhoc
 - Open your terminal.
 - Execute the following command:
   ```bash
-  streamlit run tictactoe_gui_web.py
+  streamlit run Home.py
 ---
 
 ### 👨‍🎓 Students
@@ -34,6 +34,5 @@ The web application has been deployed here: [Web App Link](https://tuoithodakhoc
   - ![Phone](https://img.icons8.com/ios-filled/20/000000/phone.png) 0362092749
 
 
-- **Full name**: Liên Huệ Tiên
-  - **ID**: 22110433
-  - ![GitHub](https://img.ic
+- **Full name**: Vũ Bảo Long
+- 
