@@ -36,7 +36,4 @@ The web application has been deployed here: [Web App Link](https://tuoithodakhoc
 
 - **Full name**: Liên Huệ Tiên
   - **ID**: 22110433
-  - ![GitHub](https://img.icons8.com/ios-filled/20/000000/github.png) [GitHub](https://github.com/iamtien-cmd)
-  - ![Facebook](https://img.icons8.com/ios-filled/20/000000/facebook--v1.png) [Facebook](https://www.facebook.com/profile.php?id=100086303203036)
-  - ![Email](https://img.icons8.com/ios-filled/20/000000/email.png) 22110433@student.hcmute.edu.vn
-  - ![Phone](https://img.icons8.com/ios-filled/20/000000/phone.png) 0865057353
+  - ![GitHub](https://img.ic
