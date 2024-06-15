@@ -2,6 +2,8 @@ import base64
 
 import streamlit as st
 from streamlit import html
+from streamlit.components.v1 import html
+
 st.set_page_config(
     page_title="Final Project",
     page_icon="👋",
@@ -166,7 +168,9 @@ body div.div6 {
 </body>
 
 </html>
-     ''')
+     ''',width=777)
+
+
 st.write("<h1 style='font-size: 50px;color:purple'>Welcome to the website of our team!</h1>",
          unsafe_allow_html=True)
 st.sidebar.success("You can choose one of my projects above.")
