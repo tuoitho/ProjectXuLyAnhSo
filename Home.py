@@ -22,7 +22,7 @@ html('''
 
 
     .container {
-    background:#000;
+    background: transparent
     height: 100vh;
     display: flex;
     justify-content: center;
@@ -163,16 +163,16 @@ body div.div6 {
         <span></span>
     </div>
 
-    <h1>Tuoi Tho da Khoc</h1>
+    <h1>Welcome to the website of our team!</h1>
     </div>
 </body>
 
 </html>
-     ''',width=777)
+     ''',height=300,width=777)
 
 
-st.write("<h1 style='font-size: 50px;color:purple'>Welcome to the website of our team!</h1>",
-         unsafe_allow_html=True)
+# st.write("<h1 style='font-size: 50px;color:purple'>Welcome to the website of our team!</h1>",
+#          unsafe_allow_html=True)
 st.sidebar.success("You can choose one of my projects above.")
 
 def add_bg_from_local(image_file):
