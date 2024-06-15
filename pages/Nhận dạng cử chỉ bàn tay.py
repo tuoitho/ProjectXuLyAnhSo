@@ -20,7 +20,7 @@ def add_bg_from_local(image_file):
     )
 
 
-add_bg_from_local(r"images\bg_ban_tay.jpg")
+# add_bg_from_local(r"images\bg_ban_tay.jpg")
 st.markdown("""
 <style>
     [data-testid=stSidebar] {
@@ -79,7 +79,7 @@ if __name__ == '__main__':
     detector = HandDetector(maxHands=1, detectionCon=0.8)
     while True:
         if st.session_state.stop == True:
-            st.session_state.frame_stop = cv.imread('t2.png')
+            st.session_state.frame_stop = cv.imread(r'pages\model\stop.jpg')
             break
         success, img = cap.read()
         hands, img = detector.findHands(img)
