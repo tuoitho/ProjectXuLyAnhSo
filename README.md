@@ -40,5 +40,5 @@ The web application has been deployed here: [Web App Link](https://tuoithodakhoc
   - ![GitHub](https://img.icons8.com/ios-filled/20/000000/github.png) [GitHub](https://github.com/vubaolongkg)
   - ![Facebook](https://img.icons8.com/ios-filled/20/000000/facebook--v1.png) [Facebook](https://web.facebook.com/profile.php?id=100010121539430)
   - ![Email](https://img.icons8.com/ios-filled/20/000000/email.png) 22110368@student.hcmute.edu.vn
-  - ![Phone](https://img.icons8.com/ios-filled/20/000000/phone.png) ![image](https://github.com/tuoitho/ProjectXuLyAnhSo/assets/135036590/5f5b6fa4-7654-41cf-840a-a86ce359eb26)
+  - ![Phone](https://img.icons8.com/ios-filled/20/000000/phone.png) <img src="https://media.tenor.com/TAqs38FFJiwAAAAi/loading.gif" width="40" height="40" />
 
