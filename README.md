@@ -31,7 +31,7 @@ The web application has been deployed here: [Web App Link](https://tuoithodakhoc
   - ![GitHub](https://img.icons8.com/ios-filled/20/000000/github.png) [GitHub](https://github.com/tuoitho/)
   - ![Facebook](https://img.icons8.com/ios-filled/20/000000/facebook--v1.png) [Facebook](https://www.facebook.com/tuoithodakhoc/)
   - ![Email](https://img.icons8.com/ios-filled/20/000000/email.png) tuoithokhoc1414@gmail.com
-  - ![Phone](https://img.icons8.com/ios-filled/20/000000/phone.png) ![image](https://github.com/tuoitho/ProjectXuLyAnhSo/assets/135036590/5f8a55bd-2246-4c48-8493-da722c16838d)
+  - ![Phone](https://img.icons8.com/ios-filled/20/000000/phone.png) <img src="https://github.com/tuoitho/ProjectXuLyAnhSo/assets/135036590/5f5b6fa4-7654-41cf-840a-a86ce359eb26" width="40" height="40" />
 
 
 
