@@ -16,7 +16,7 @@ The web application has been deployed here: [Web App Link](https://tuoithodakhoc
 
 #### Step 1: Download or Clone the Repository
 - You can download the repository or clone it to your local machine.
-#### Step 2: Download or Clone the Repository
+#### Step 2: Add files
 - Add missing files that are so large that I can't upload to github the usual way
 #### Step 3: Run the Application
 - Open your terminal.
