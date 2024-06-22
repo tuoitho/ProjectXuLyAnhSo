@@ -1,4 +1,4 @@
-# 🎓 Project Xử Lý Ảnh Số (Image Processing)
+# 🎓 Project Xử Lý Ảnh Số (Digital image processing)
 
 ## 🌐 Web Application
 The web application has been deployed here: [Web App Link](https://tuoithodakhoc.streamlit.app/)
