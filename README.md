@@ -1,4 +1,4 @@
-# 🎓 Do-An-AI - Đồ án Trí Tuệ Nhân Tạo
+# 🎓 Project Xử Lý Ảnh Số (Image Processing)
 
 ## 🌐 Web Application
 The web application has been deployed here: [Web App Link](https://tuoithodakhoc.streamlit.app/)
@@ -16,8 +16,9 @@ The web application has been deployed here: [Web App Link](https://tuoithodakhoc
 
 #### Step 1: Download or Clone the Repository
 - You can download the repository or clone it to your local machine.
-
-#### Step 2: Run the Application
+#### Step 2: Download or Clone the Repository
+- Add missing files that are so large that I can't upload to github the usual way
+#### Step 3: Run the Application
 - Open your terminal.
 - Execute the following command:
   ```bash
