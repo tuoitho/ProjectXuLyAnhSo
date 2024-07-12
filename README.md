@@ -18,6 +18,7 @@ The web application has been deployed here: [Web App Link](https://tuoithodakhoc
 - You can download the repository or clone it to your local machine.
 #### Step 2: Add files
 - Add missing files that are so large that we can't upload to github the usual way
+
   ( Dowwnload [missing file](https://drive.google.com/file/d/1QPbVsPli9WcL3OZWV15fgVYSHoj2HNkj/view?usp=sharing) and put it into pages/modeldoituong/modelobject
 #### Step 3: Run the Application
 - Open your terminal.
