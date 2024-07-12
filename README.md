@@ -18,6 +18,7 @@ The web application has been deployed here: [Web App Link](https://tuoithodakhoc
 - You can download the repository or clone it to your local machine.
 #### Step 2: Add files
 - Add missing files that are so large that we can't upload to github the usual way
+  ( Dowwnload [missing file](https://drive.google.com/file/d/1QPbVsPli9WcL3OZWV15fgVYSHoj2HNkj/view?usp=sharing) and put it into pages/modeldoituong/modelobject
 #### Step 3: Run the Application
 - Open your terminal.
 - Execute the following command:
@@ -40,6 +41,6 @@ The web application has been deployed here: [Web App Link](https://tuoithodakhoc
   - **ID**: 22110368
   - ![GitHub](https://img.icons8.com/ios-filled/20/000000/github.png) [GitHub](https://github.com/vubaolongkg)
   - ![Facebook](https://img.icons8.com/ios-filled/20/000000/facebook--v1.png) [Facebook](https://web.facebook.com/profile.php?id=100010121539430)
-  - ![Email](https://img.icons8.com/ios-filled/20/000000/email.png) 22110368@student.hcmute.edu.vn
+  - ![Email](https://img.icons8.com/ios-filled/20/000000/email.png) vubaolong1484@gmail.com
   - ![Phone](https://img.icons8.com/ios-filled/20/000000/phone.png) <img src="https://media.tenor.com/TAqs38FFJiwAAAAi/loading.gif" width="40" height="40" />
 
